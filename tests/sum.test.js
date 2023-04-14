@@ -1,4 +1,4 @@
-const sum = require('./sum')
+import { sum } from "./sum"
 
 describe("Suite for Sum", ()=>{ 
     

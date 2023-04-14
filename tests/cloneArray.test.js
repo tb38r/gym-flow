@@ -1,4 +1,4 @@
-const cloneArray = require('./cloneArray')
+import { cloneArray } from "./cloneArray"
 
 test('properly clones array', ()=>{
     const arr = [1,2,3]

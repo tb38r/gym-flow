@@ -1,5 +1,5 @@
-const clonearray = (array)=>{
+const cloneArray = (array)=>{
     return [...array]
 }
 
-module.exports =clonearray
+export {cloneArray}
