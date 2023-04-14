@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import './App.css'
-import Demo from './demo'
 import SearchAppBar from './Appbar'
 function App() {
   const [count, setCount] = useState(0)
@@ -8,7 +7,6 @@ function App() {
   return (
     <div className="App">
       <SearchAppBar/>
-     <Demo/>
     </div>
   )
 }
