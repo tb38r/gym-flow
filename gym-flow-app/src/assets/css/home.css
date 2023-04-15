@@ -9,12 +9,17 @@
     grid-template-columns: 1fr 1fr;
     height: 50%;
     margin-top: 2rem;
+    grid-gap: 5px;
 }
 
 .tester{
 background-color: black;
+border-radius: 25px;
+
 }
 
 .tes{
 background-color: pink;
+border-radius: 25px;
+
 }
