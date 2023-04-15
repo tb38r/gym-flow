@@ -1,0 +1,20 @@
+.main-body-content{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.workouts-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 50%;
+    margin-top: 2rem;
+}
+
+.tester{
+background-color: black;
+}
+
+.tes{
+background-color: pink;
+}

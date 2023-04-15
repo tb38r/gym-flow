@@ -1,12 +1,29 @@
 import { useState } from 'react'
-import './App.css'
-import SearchAppBar from './Appbar'
+import '../src/assets/css/App.css'
+import '../src/assets/css/home.css'
+
+import ResponsiveAppBar from './pages/home/components/Appbar'
+
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <div className="App">
-      <SearchAppBar/>
+      <ResponsiveAppBar/>
+      <div className="main-body-content">
+        <div className="workouts-container">
+
+<div className="tester">hi</div>
+        <div className="tes">hi</div>
+<div className="tes">hi</div>
+<div className="tester">hi</div>
+
+
+        </div>
+
+
+
+      </div>
     </div>
   )
 }
