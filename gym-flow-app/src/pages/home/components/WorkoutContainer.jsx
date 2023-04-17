@@ -9,9 +9,9 @@ const WorkoutContainer = (props) => {
   return (
     <>
       <div onClick={HandleClick} className="workout-box" id={props.id}>
-        <div className="workout-box-title">{props.title}</div>
-        <div className="workout-box-activities"></div>
-        {props.workouts}
+        <div onClick={HandleClick} className="workout-box-title" id={props.id}>{props.title} </div>
+        <div onClick={HandleClick} className="workout-box-activities" id={props.id}> {props.workouts}</div>
+       
       </div>
     </>
   );
