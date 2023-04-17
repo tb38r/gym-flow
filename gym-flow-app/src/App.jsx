@@ -1,11 +1,10 @@
-import { useState } from 'react'
 import '../src/assets/css/App.css'
 import '../src/assets/css/home.css'
+import { WorkoutContainer } from './pages/home/components/WorkoutContainer'
 
 import ResponsiveAppBar from './pages/home/components/Appbar'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <div className="App">
@@ -13,10 +12,10 @@ function App() {
       <div className="main-body-content">
         <div className="workouts-container">
 
-<div className="tester">hi</div>
-        <div className="tes">hi</div>
-<div className="tes">hi</div>
-<div className="tester">hi</div>
+<WorkoutContainer title= "Chest & Triceps" id="chest-triceps"/>
+<WorkoutContainer title= "Legs" id="legs"/>
+<WorkoutContainer title= "Back & Biceps" id="back-biceps"/>
+<WorkoutContainer title= "Abs" id="abs"/>
 
 
         </div>
