@@ -12,7 +12,8 @@
     flex-direction: column;
 border-style: solid;
 border-color: #f2f2f2;
-text-align: left
+text-align: left;
+cursor: pointer;
 }
 
 .workout-box-title{
@@ -30,5 +31,7 @@ text-align: left;
 color: rgb(96, 95, 95) ;
 padding-left: 15px;
 padding-right: 10px;
+cursor: pointer;
+
 }
 
