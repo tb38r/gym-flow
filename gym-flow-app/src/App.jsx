@@ -1,5 +1,7 @@
 import '../src/assets/css/App.css'
 import '../src/assets/css/home.css'
+import '../src/assets/css/workouts.css'
+
 import { WorkoutContainer } from './pages/home/components/WorkoutContainer'
 import { FormattedLegs,FormattedChest,FormattedBB,FormattedAbs} from './pages/home/workouts/Workouts'
 import ResponsiveAppBar from './pages/home/components/Appbar'
@@ -10,6 +12,7 @@ function App() {
 
   return (
     <div className="App">
+      <>
       <ResponsiveAppBar/>
       <div className="main-body-content">
         <div className="workouts-container">
@@ -25,6 +28,7 @@ function App() {
 
 
       </div>
+    </>
     </div>
   )
 }
