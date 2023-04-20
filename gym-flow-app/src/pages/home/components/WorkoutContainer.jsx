@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 const WorkoutContainer = (props) => {
   const HandleClick = (e) => {
+    e.preventDefault();
     console.log(e.target.id);
   };
 

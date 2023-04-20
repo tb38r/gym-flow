@@ -8,7 +8,7 @@
     flex-direction: row;
     border-style: solid;
 padding: 10px;
-justify-content: center;
+justify-content: space-evenly;
 
 }
 
