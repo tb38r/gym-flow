@@ -11,7 +11,6 @@ import {
   FormattedAbs
 } from './pages/home/workouts/Workouts';
 import ResponsiveAppBar from './pages/home/components/Appbar';
-import { BasicModal } from './pages/home/components/WorkoutsModal';
 
 function App() {
   return (
@@ -31,7 +30,6 @@ function App() {
           </div>
           <Timer />
         </div>
-        <BasicModal />
       </>
     </div>
   );
