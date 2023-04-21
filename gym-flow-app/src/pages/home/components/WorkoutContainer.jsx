@@ -27,9 +27,18 @@ const WorkoutContainer = (props) => {
   const handleChestOpen = () => setChestOpen(true);
   const handleChestClose = () => setChestOpen(false);
 
+  const [backOpen, setBackOpen] = React.useState(false);
+  const handleBackOpen = () => setBackOpen(true);
+  const handleBackClose = () => setBackOpen(false);
+
+  const [absOpen, setAbsOpen] = React.useState(false);
+  const handleAbsOpen = () => setAbsOpen(true);
+  const handleAbsClose = () => setAbsOpen(false);
+
   const HandleClick = (e) => {
     e.preventDefault();
     let clickedOption = e.target.id;
+    console.log(clickedOption);
 
     switch (clickedOption) {
       case 'legs':
@@ -37,6 +46,12 @@ const WorkoutContainer = (props) => {
         break;
       case 'chest-triceps':
         handleChestOpen();
+        break;
+      case 'back-biceps':
+        handleBackOpen();
+        break;
+      case 'abs':
+        handleAbsOpen();
         break;
     }
   };
@@ -78,6 +93,36 @@ const WorkoutContainer = (props) => {
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
             Chest Stuff{' '}
+          </Typography>
+        </Box>
+      </Modal>
+
+      <Modal
+        open={backOpen}
+        onClose={handleBackClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description">
+        <Box sx={style}>
+          <Typography id="modal-modal-title" variant="h6" component="h2">
+            Text in a modal
+          </Typography>
+          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+            Back Stuff{' '}
+          </Typography>
+        </Box>
+      </Modal>
+
+      <Modal
+        open={absOpen}
+        onClose={handleAbsClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description">
+        <Box sx={style}>
+          <Typography id="modal-modal-title" variant="h6" component="h2">
+            Text in a modal
+          </Typography>
+          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+            Ab Stuff{' '}
           </Typography>
         </Box>
       </Modal>
