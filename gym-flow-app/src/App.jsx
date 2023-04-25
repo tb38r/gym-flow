@@ -2,6 +2,7 @@ import '../src/assets/css/App.css';
 import '../src/assets/css/home.css';
 import '../src/assets/css/workouts.css';
 import { Timer } from './pages/home/components/Timer';
+import Button from '@mui/material/Button';
 
 import { WorkoutContainer } from './pages/home/components/WorkoutContainer';
 import {
@@ -29,6 +30,13 @@ function App() {
             <WorkoutContainer title="Abs" id="abs" workouts={FormattedAbs} />
           </div>
           <Timer />
+          <Button
+            onClick={() => {
+              console.log('onClick');
+            }}
+            variant="contained">
+            GO!
+          </Button>
         </div>
       </>
     </div>
