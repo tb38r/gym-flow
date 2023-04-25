@@ -1,11 +1,10 @@
-import React from 'react';
+import { React, useState, useContext } from 'react';
 import PropTypes from 'prop-types';
 import { Box } from '@mui/material';
 // import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
-import Button from '@mui/material/Button';
-
+import { GymFlowContext } from '../../../context/flow-context';
 
 const style = {
   position: 'relative',
@@ -21,21 +20,23 @@ const style = {
 };
 
 const WorkoutContainer = (props) => {
-  const [legOpen, setLegOpen] = React.useState(false);
+  const [legOpen, setLegOpen] = useState(false);
   const handleLegOpen = () => setLegOpen(true);
   const handleLegClose = () => setLegOpen(false);
 
-  const [chestOpen, setChestOpen] = React.useState(false);
+  const [chestOpen, setChestOpen] = useState(false);
   const handleChestOpen = () => setChestOpen(true);
   const handleChestClose = () => setChestOpen(false);
 
-  const [backOpen, setBackOpen] = React.useState(false);
+  const [backOpen, setBackOpen] = useState(false);
   const handleBackOpen = () => setBackOpen(true);
   const handleBackClose = () => setBackOpen(false);
 
-  const [absOpen, setAbsOpen] = React.useState(false);
-  const handleAbsOpen = () => setAbsOpen(true);
-  const handleAbsClose = () => setAbsOpen(false);
+  // const [absOpen, setAbsOpen] = React.useState(false);
+  // const handleAbsOpen = () => setAbsOpen(true);
+  // const handleAbsClose = () => setAbsOpen(false);
+
+  const { handleAbsOpen } = useContext(GymFlowContext);
 
   const HandleClick = (e) => {
     e.preventDefault();
@@ -114,20 +115,7 @@ const WorkoutContainer = (props) => {
         </Box>
       </Modal>
 
-      <Modal
-        open={absOpen}
-        onClose={handleAbsClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description">
-        <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            Text in a modal
-          </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Ab Stuff{' '}
-          </Typography>
-        </Box>
-      </Modal>
+      {props.modal}
     </>
   );
 };
@@ -135,7 +123,8 @@ const WorkoutContainer = (props) => {
 WorkoutContainer.propTypes = {
   id: PropTypes.string,
   title: PropTypes.string,
-  workouts: PropTypes.string
+  workouts: PropTypes.string,
+  modal: PropTypes.object
 };
 
 export { WorkoutContainer };

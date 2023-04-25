@@ -12,32 +12,41 @@ import {
   FormattedAbs
 } from './pages/home/workouts/Workouts';
 import ResponsiveAppBar from './pages/home/components/Appbar';
+import { GymFlowProvider } from './context/flow-context';
+import { AbsModal } from './pages/home/components/workoutmodals/Absmodal';
 
 function App() {
   return (
     <div className="App">
       <>
-        <ResponsiveAppBar />
-        <div className="main-body-content">
-          <div className="workouts-container">
-            <WorkoutContainer
-              title="Chest & Triceps"
-              id="chest-triceps"
-              workouts={FormattedChest}
-            />
-            <WorkoutContainer title="Legs" id="legs" workouts={FormattedLegs} />
-            <WorkoutContainer title="Back & Biceps" id="back-biceps" workouts={FormattedBB} />
-            <WorkoutContainer title="Abs" id="abs" workouts={FormattedAbs} />
+        <GymFlowProvider>
+          <ResponsiveAppBar />
+          <div className="main-body-content">
+            <div className="workouts-container">
+              <WorkoutContainer
+                title="Chest & Triceps"
+                id="chest-triceps"
+                workouts={FormattedChest}
+              />
+              <WorkoutContainer
+                title="Legs"
+                id="legs"
+                workouts={FormattedLegs}
+                modal={<AbsModal />}
+              />
+              <WorkoutContainer title="Back & Biceps" id="back-biceps" workouts={FormattedBB} />
+              <WorkoutContainer title="Abs" id="abs" workouts={FormattedAbs} />
+            </div>
+            <Timer />
+            <Button
+              onClick={() => {
+                console.log('onClick');
+              }}
+              variant="contained">
+              GO!
+            </Button>
           </div>
-          <Timer />
-          <Button
-            onClick={() => {
-              console.log('onClick');
-            }}
-            variant="contained">
-            GO!
-          </Button>
-        </div>
+        </GymFlowProvider>
       </>
     </div>
   );
