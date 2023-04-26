@@ -1,9 +1,11 @@
 import { Box } from '@mui/material';
 import { React, useContext } from 'react';
-// import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import { GymFlowContext } from '../../../../context/flow-context';
+import '../../../../assets/css/boxes.css';
+import { WorkoutRows } from '../WorkoutRows';
+import Button from '@mui/material/Button';
+import { SaveButton } from '../SaveButton';
 
 const style = {
   position: 'relative',
@@ -18,8 +20,30 @@ const style = {
   p: 4
 };
 
+// function DummyForm() {
+//   return (
+//     <div className="wrapper">
+//       <h3>How About Them Apples</h3>
+//       <form>
+//         <fieldset>
+//           <label>
+//             <p>Name</p>
+//             <input name="name" />
+//           </label>
+//         </fieldset>
+//         <button type="submit">Submit</button>
+//       </form>
+//     </div>
+//   );
+// }
+
 const LegsModal = () => {
   const { legsOpen, handleLegsClose } = useContext(GymFlowContext);
+
+  const HandleSubmit = (e) => {
+    e.preventDefault();
+    console.log('hiii');
+  };
 
   return (
     <>
@@ -28,13 +52,17 @@ const LegsModal = () => {
         onClose={handleLegsClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description">
-        <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            Leg Title in a modal
-          </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Leg Stuff{' '}
-          </Typography>
+        <Box id="modal-box" sx={style}>
+          <div className="modal-box-title">LEGS</div>
+          <div className="reps-sets">
+            <div className="reps-box">REPS</div>
+            <div className="sets-box">SETS</div>
+          </div>
+          <form onSubmit={HandleSubmit}>
+            {/* <WorkoutRows  workoutname="Squats" /> */}
+            <input type="number" id="quantity" name="quantity" min="0" max="12"></input>
+            <SaveButton />
+          </form>
         </Box>
       </Modal>
     </>

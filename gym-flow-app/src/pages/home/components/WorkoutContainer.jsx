@@ -1,23 +1,10 @@
-import { React, useState, useContext } from 'react';
+import { React, useContext } from 'react';
 import PropTypes from 'prop-types';
-import { Box } from '@mui/material';
+//import { Box } from '@mui/material';
 // import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import Modal from '@mui/material/Modal';
+//import Typography from '@mui/material/Typography';
+//import Modal from '@mui/material/Modal';
 import { GymFlowContext } from '../../../context/flow-context';
-
-const style = {
-  position: 'relative',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  width: 320,
-  height: '50%',
-  bgcolor: 'background.paper',
-  border: '2px solid #000',
-  boxShadow: 24,
-  p: 4
-};
 
 const WorkoutContainer = (props) => {
   // const [legOpen, setLegOpen] = useState(false);

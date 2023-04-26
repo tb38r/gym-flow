@@ -1,5 +1,5 @@
-const cloneArray = (array)=>{
-    return [...array]
-}
+const cloneArray = (array) => {
+  return [...array];
+};
 
-export {cloneArray}
+export { cloneArray };

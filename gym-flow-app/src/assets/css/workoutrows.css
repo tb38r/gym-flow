@@ -1,0 +1,10 @@
+.workout-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.workout-row-name{
+    display: flex;
+    align-items: center;
+}

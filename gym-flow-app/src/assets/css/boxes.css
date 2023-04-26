@@ -1,0 +1,33 @@
+#modal-box{
+display: flex;
+flex-direction : column
+
+
+}
+
+.modal-box-title{
+    display: flex;
+    justify-content: center;
+    font-weight: 900;
+    color:blue
+}
+
+.reps-sets{
+    display: flex;
+    justify-content: space-between;
+}
+
+.reps-box{
+color: palevioletred;
+}
+
+.sets-box{
+    color: palevioletred;
+    }
+
+    #workout-form-sub-btn{
+        background-color: blue;
+color: white;
+font-weight: bold;
+width: 99%;
+    }

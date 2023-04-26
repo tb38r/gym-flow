@@ -53,6 +53,11 @@ function App() {
             </div>
             <Timer />
             <Button
+              size="large"
+              sx={{
+                fontWeight: 900,
+                fontSize: 18
+              }}
               onClick={() => {
                 console.log('onClick');
               }}
