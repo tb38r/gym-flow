@@ -20,23 +20,24 @@ const style = {
 };
 
 const WorkoutContainer = (props) => {
-  const [legOpen, setLegOpen] = useState(false);
-  const handleLegOpen = () => setLegOpen(true);
-  const handleLegClose = () => setLegOpen(false);
+  // const [legOpen, setLegOpen] = useState(false);
+  // const handleLegOpen = () => setLegOpen(true);
+  // const handleLegClose = () => setLegOpen(false);
 
-  const [chestOpen, setChestOpen] = useState(false);
-  const handleChestOpen = () => setChestOpen(true);
-  const handleChestClose = () => setChestOpen(false);
+  // const [chestOpen, setChestOpen] = useState(false);
+  // const handleChestOpen = () => setChestOpen(true);
+  // const handleChestClose = () => setChestOpen(false);
 
-  const [backOpen, setBackOpen] = useState(false);
-  const handleBackOpen = () => setBackOpen(true);
-  const handleBackClose = () => setBackOpen(false);
+  // const [backOpen, setBackOpen] = useState(false);
+  // const handleBackOpen = () => setBackOpen(true);
+  // const handleBackClose = () => setBackOpen(false);
 
   // const [absOpen, setAbsOpen] = React.useState(false);
   // const handleAbsOpen = () => setAbsOpen(true);
   // const handleAbsClose = () => setAbsOpen(false);
 
-  const { handleAbsOpen } = useContext(GymFlowContext);
+  const { handleAbsOpen, handleChestOpen, handleBackOpen, handleLegsOpen } =
+    useContext(GymFlowContext);
 
   const HandleClick = (e) => {
     e.preventDefault();
@@ -45,7 +46,7 @@ const WorkoutContainer = (props) => {
 
     switch (clickedOption) {
       case 'legs':
-        handleLegOpen();
+        handleLegsOpen();
         break;
       case 'chest-triceps':
         handleChestOpen();
@@ -70,52 +71,13 @@ const WorkoutContainer = (props) => {
           {props.workouts}
         </div>
       </div>
-      <Modal
-        open={legOpen}
-        onClose={handleLegClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description">
-        <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            Text in a modal
-          </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Leg stuff
-          </Typography>
-        </Box>
-      </Modal>
+      {props.legsmodal}
 
-      <Modal
-        open={chestOpen}
-        onClose={handleChestClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description">
-        <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            Text in a modal
-          </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Chest Stuff{' '}
-          </Typography>
-        </Box>
-      </Modal>
+      {props.chestmodal}
 
-      <Modal
-        open={backOpen}
-        onClose={handleBackClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description">
-        <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            Text in a modal
-          </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Back Stuff{' '}
-          </Typography>
-        </Box>
-      </Modal>
+      {props.backmodal}
 
-      {props.modal}
+      {props.absmodal}
     </>
   );
 };
@@ -124,7 +86,10 @@ WorkoutContainer.propTypes = {
   id: PropTypes.string,
   title: PropTypes.string,
   workouts: PropTypes.string,
-  modal: PropTypes.object
+  absmodal: PropTypes.object,
+  backmodal: PropTypes.object,
+  chestmodal: PropTypes.object,
+  legsmodal: PropTypes.object
 };
 
 export { WorkoutContainer };

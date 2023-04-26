@@ -13,7 +13,10 @@ import {
 } from './pages/home/workouts/Workouts';
 import ResponsiveAppBar from './pages/home/components/Appbar';
 import { GymFlowProvider } from './context/flow-context';
-import { AbsModal } from './pages/home/components/workoutmodals/Absmodal';
+import { AbsModal } from './pages/home/components/workoutmodals/AbsModal';
+import { BackModal } from './pages/home/components/workoutmodals/BackModal';
+import { ChestModal } from './pages/home/components/workoutmodals/ChestModal';
+import { LegsModal } from './pages/home/components/workoutmodals/LegsModal';
 
 function App() {
   return (
@@ -27,15 +30,26 @@ function App() {
                 title="Chest & Triceps"
                 id="chest-triceps"
                 workouts={FormattedChest}
+                chestmodal={<ChestModal />}
               />
               <WorkoutContainer
                 title="Legs"
                 id="legs"
                 workouts={FormattedLegs}
-                modal={<AbsModal />}
+                legsmodal={<LegsModal />}
               />
-              <WorkoutContainer title="Back & Biceps" id="back-biceps" workouts={FormattedBB} />
-              <WorkoutContainer title="Abs" id="abs" workouts={FormattedAbs} />
+              <WorkoutContainer
+                title="Back & Biceps"
+                id="back-biceps"
+                workouts={FormattedBB}
+                backmodal={<BackModal />}
+              />
+              <WorkoutContainer
+                title="Abs"
+                id="abs"
+                workouts={FormattedAbs}
+                absmodal={<AbsModal />}
+              />
             </div>
             <Timer />
             <Button

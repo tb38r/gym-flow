@@ -1,12 +1,14 @@
 import * as React from 'react';
+import PropTypes from 'prop-types';
+
 import { createContext, useState } from 'react';
 
 export const GymFlowContext = createContext();
 
 export function GymFlowProvider({ children }) {
-  const [legOpen, setLegOpen] = useState(false);
-  const handleLegOpen = () => setLegOpen(true);
-  const handleLegClose = () => setLegOpen(false);
+  const [legsOpen, setLegsOpen] = useState(false);
+  const handleLegsOpen = () => setLegsOpen(true);
+  const handleLegsClose = () => setLegsOpen(false);
 
   const [chestOpen, setChestOpen] = useState(false);
   const handleChestOpen = () => setChestOpen(true);
@@ -23,9 +25,9 @@ export function GymFlowProvider({ children }) {
   return (
     <GymFlowContext.Provider
       value={{
-        legOpen,
-        handleLegOpen,
-        handleLegClose,
+        legsOpen,
+        handleLegsOpen,
+        handleLegsClose,
         chestOpen,
         handleChestOpen,
         handleChestClose,
@@ -40,3 +42,7 @@ export function GymFlowProvider({ children }) {
     </GymFlowContext.Provider>
   );
 }
+
+GymFlowProvider.propTypes = {
+  children: PropTypes.node
+};
