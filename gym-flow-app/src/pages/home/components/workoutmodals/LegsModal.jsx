@@ -4,7 +4,6 @@ import Modal from '@mui/material/Modal';
 import { GymFlowContext } from '../../../../context/flow-context';
 import '../../../../assets/css/boxes.css';
 import { WorkoutRows } from '../WorkoutRows';
-import Button from '@mui/material/Button';
 import { SaveButton } from '../SaveButton';
 
 const style = {
@@ -20,30 +19,14 @@ const style = {
   p: 4
 };
 
-// function DummyForm() {
-//   return (
-//     <div className="wrapper">
-//       <h3>How About Them Apples</h3>
-//       <form>
-//         <fieldset>
-//           <label>
-//             <p>Name</p>
-//             <input name="name" />
-//           </label>
-//         </fieldset>
-//         <button type="submit">Submit</button>
-//       </form>
-//     </div>
-//   );
-// }
-
 const LegsModal = () => {
-  const { legsOpen, handleLegsClose } = useContext(GymFlowContext);
+  const { legsOpen, handleLegsClose, updateWorkoutObjSet, updateWorkoutObjRep } =
+    useContext(GymFlowContext);
 
-  const HandleSubmit = (e) => {
-    e.preventDefault();
-    console.log('hiii');
-  };
+  // const HandleSubmit = (e) => {
+  //   e.preventDefault();
+  //   console.log('hiii');
+  // };
 
   return (
     <>
@@ -55,14 +38,11 @@ const LegsModal = () => {
         <Box id="modal-box" sx={style}>
           <div className="modal-box-title">LEGS</div>
           <div className="reps-sets">
-            <div className="reps-box">REPS</div>
-            <div className="sets-box">SETS</div>
+            <div className="reps-box">SETS</div>
+            <div className="sets-box">REPS</div>
           </div>
-          <form onSubmit={HandleSubmit}>
-            {/* <WorkoutRows  workoutname="Squats" /> */}
-            <input type="number" id="quantity" name="quantity" min="0" max="12"></input>
-            <SaveButton />
-          </form>
+          <WorkoutRows workoutname="Squats" />
+          <SaveButton id="savelegs" />
         </Box>
       </Modal>
     </>

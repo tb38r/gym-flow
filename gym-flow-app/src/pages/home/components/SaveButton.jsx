@@ -1,14 +1,18 @@
-import Button from '@mui/material/Button';
 import '../../../assets/css/boxes.css';
+import PropTypes from 'prop-types';
 
-const SaveButton = () => {
+const SaveButton = (props) => {
   return (
     <>
-      <Button id="workout-form-sub-btn" type="submit">
+      <button className="workout-form-sub-btn" id={props.id} type="submit">
         SAVE
-      </Button>
+      </button>
     </>
   );
+};
+
+SaveButton.propTypes = {
+  id: PropTypes.string
 };
 
 export { SaveButton };
