@@ -1,8 +1,11 @@
 import { Box } from '@mui/material';
 import { React, useContext } from 'react';
 // import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
+import { WorkoutRows } from '../WorkoutRows';
 import Modal from '@mui/material/Modal';
+import { SaveButton } from '../SaveButton';
+import '../../../../assets/css/boxes.css';
+
 import { GymFlowContext } from '../../../../context/flow-context';
 
 const style = {
@@ -28,13 +31,20 @@ const ChestModal = () => {
         onClose={handleChestClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description">
-        <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            Chest Title in a modal
-          </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Chest Stuff{' '}
-          </Typography>
+        <Box id="modal-box" sx={style}>
+          <div className="modal-box-title">CHEST & TRICEPS</div>
+          <div className="reps-sets">
+            <div className="sets-box-title">SETS</div>
+            <div className="reps-box-title">REPS</div>
+          </div>
+          <WorkoutRows workoutname="Bench Press" />
+          <WorkoutRows workoutname="Dumbbell Press" />
+          <WorkoutRows workoutname="Dips" />
+          <WorkoutRows workoutname="Push Downs" />
+          <WorkoutRows workoutname="Push Ups" />
+          <WorkoutRows workoutname="Tri Extensions" />
+
+          <SaveButton id="saveChest" />
         </Box>
       </Modal>
     </>

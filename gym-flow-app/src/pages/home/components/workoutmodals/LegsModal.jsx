@@ -20,13 +20,7 @@ const style = {
 };
 
 const LegsModal = () => {
-  const { legsOpen, handleLegsClose, updateWorkoutObjSet, updateWorkoutObjRep } =
-    useContext(GymFlowContext);
-
-  // const HandleSubmit = (e) => {
-  //   e.preventDefault();
-  //   console.log('hiii');
-  // };
+  const { legsOpen, handleLegsClose } = useContext(GymFlowContext);
 
   return (
     <>
@@ -38,10 +32,15 @@ const LegsModal = () => {
         <Box id="modal-box" sx={style}>
           <div className="modal-box-title">LEGS</div>
           <div className="reps-sets">
-            <div className="reps-box">SETS</div>
-            <div className="sets-box">REPS</div>
+            <div className="reps-box-title">SETS</div>
+            <div className="sets-box-title">REPS</div>
           </div>
           <WorkoutRows workoutname="Squats" />
+          <WorkoutRows workoutname="Leg Extensions" />
+          <WorkoutRows workoutname="Lunges" />
+          <WorkoutRows workoutname="Leg Press" />
+          <WorkoutRows workoutname="Leg Curl" />
+
           <SaveButton id="savelegs" />
         </Box>
       </Modal>

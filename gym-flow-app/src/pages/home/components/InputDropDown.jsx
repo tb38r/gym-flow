@@ -7,18 +7,14 @@ import '../../../assets/css/range.css';
 const InputDropdown = (props) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedValue, setSelectedValue] = useState(0);
-  const { workoutObjSet, workoutObjRep, updateWorkoutObjSet, updateWorkoutObjRep } =
-    useContext(GymFlowContext);
+  const { updateWorkoutObjSet, updateWorkoutObjRep } = useContext(GymFlowContext);
 
   const handleOptionClick = (value, event) => {
     let inputType = event.target.getAttribute('name');
 
     if (inputType === 'sets') {
-      console.log('abc');
-
       updateWorkoutObjSet(event.target.getAttribute('value'), value);
     } else if (inputType === 'reps') {
-      console.log('efg');
       updateWorkoutObjRep(event.target.getAttribute('value'), value);
     }
     setSelectedValue(value);

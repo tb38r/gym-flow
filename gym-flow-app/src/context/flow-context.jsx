@@ -27,26 +27,14 @@ export function GymFlowProvider({ children }) {
 
   const updateWorkoutObjRep = (keys, rep) => {
     let subStringed = `${keys}`;
-    console.log('PRE --->', 'test', keys, rep);
-    // if (!Object.hasOwn(workoutObjRep, `${keys}`)) {
-    //   console.log('INONE', `${keys}`);
-    //   setWorkoutObjRep({ [subStringed]: rep });
-    //   console.log('WORONE --->', workoutObjRep);
-    // } else {
-    //   console.log('INTWO');
-    // }
-    function Tester() {
-      console.log('too soon');
-      console.log(workoutObjRep);
-    }
+
     setWorkoutObjRep({ ...workoutObjRep, [subStringed]: rep });
-    setTimeout(Tester, 2000);
-    //console.log('WOR --->', workoutObjRep);
   };
 
-  const updateWorkoutObjSet = (key, set) => {
-    setWorkoutObjSet((workoutObjSet[key] = set));
-    console.log('WOS--->', workoutObjSet);
+  const updateWorkoutObjSet = (keys, set) => {
+    let subStringed = `${keys}`;
+
+    setWorkoutObjSet({ ...workoutObjSet, [subStringed]: set });
   };
 
   return (
