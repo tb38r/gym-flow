@@ -1,7 +1,7 @@
 import { Box } from '@mui/material';
 import { React, useContext } from 'react';
-// import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
+import { SaveButton } from '../SaveButton';
+import { WorkoutRows } from '../WorkoutRows';
 import Modal from '@mui/material/Modal';
 import { GymFlowContext } from '../../../../context/flow-context';
 
@@ -28,13 +28,19 @@ const BackModal = () => {
         onClose={handleBackClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description">
-        <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            Back Title in a modal
-          </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Back Stuff{' '}
-          </Typography>
+        <Box id="modal-box" sx={style}>
+          <div className="modal-box-title">BACK & BICEPS</div>
+          <div className="reps-sets">
+            <div className="reps-box-title">SETS</div>
+            <div className="sets-box-title">REPS</div>
+          </div>
+          <WorkoutRows workoutname="Lat Pulldowns" />
+          <WorkoutRows workoutname="Preacher Curls" />
+          <WorkoutRows workoutname="Seated Rows" />
+          <WorkoutRows workoutname="Dumbell Curl" />
+          <WorkoutRows workoutname="Deadlift" />
+
+          <SaveButton id="savelegs" />
         </Box>
       </Modal>
     </>

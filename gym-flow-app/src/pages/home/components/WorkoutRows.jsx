@@ -1,4 +1,5 @@
 import { React } from 'react';
+import PropTypes from 'prop-types';
 
 import '../../../assets/css/workoutrows.css';
 import InputDropdown from './InputDropDown';
@@ -6,7 +7,7 @@ import InputDropdown from './InputDropDown';
 const WorkoutRows = (props) => {
   return (
     <div className="workout-row">
-      <InputDropdown timeoptions={[0, 1, 2, 3, 4, 5, 6]} name="sets" exercise={props.workoutname} />
+      <InputDropdown timeoptions={[1, 2, 3, 4, 5, 6]} name="sets" exercise={props.workoutname} />
 
       <div className="workout-row-name">{props.workoutname}</div>
       <InputDropdown
@@ -16,6 +17,10 @@ const WorkoutRows = (props) => {
       />
     </div>
   );
+};
+
+WorkoutRows.propTypes = {
+  workoutname: PropTypes.string
 };
 
 export { WorkoutRows };

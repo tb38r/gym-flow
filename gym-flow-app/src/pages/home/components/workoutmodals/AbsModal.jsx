@@ -1,7 +1,7 @@
 import { Box } from '@mui/material';
 import { React, useContext } from 'react';
-// import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
+import { SaveButton } from '../SaveButton';
+import { WorkoutRows } from '../WorkoutRows';
 import Modal from '@mui/material/Modal';
 import { GymFlowContext } from '../../../../context/flow-context';
 
@@ -28,13 +28,20 @@ const AbsModal = () => {
         onClose={handleAbsClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description">
-        <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            Text in a modal
-          </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Ab Stuff{' '}
-          </Typography>
+        <Box id="modal-box" sx={style}>
+          <div className="modal-box-title">ABS</div>
+          <div className="reps-sets">
+            <div className="reps-box-title">SETS</div>
+            <div className="sets-box-title">REPS</div>
+          </div>
+          <WorkoutRows workoutname="Crunches" />
+          <WorkoutRows workoutname="Planks" />
+          <WorkoutRows workoutname="Ab Rollouts" />
+          <WorkoutRows workoutname="Sit Ups" />
+          <WorkoutRows workoutname="V Ups" />
+          <WorkoutRows workoutname="Leg Raises" />
+
+          <SaveButton id="savelegs" />
         </Box>
       </Modal>
     </>
