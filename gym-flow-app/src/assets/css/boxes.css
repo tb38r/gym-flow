@@ -2,13 +2,16 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 90%;
 }
+
+
 
 .modal-box-title {
   display: flex;
   justify-content: center;
   font-weight: 900;
-  color: blue;
+  color:#1976d2;
 }
 
 .reps-sets {
@@ -27,8 +30,39 @@
 }
 
 .workout-form-sub-btn {
-  background-color: blue;
+  background-color :#1976d2;
   color: white;
   font-weight: bold;
   width: 100%;
+}
+
+
+
+#box-legs {
+ 
+  display: none;
+  z-index: 5;
+
+}
+
+#box-abs {
+ 
+  display: none;
+  z-index: 5;
+
+}
+
+
+#box-chest {
+ 
+  display: none;
+  z-index: 5;
+
+}
+
+#box-back {
+ 
+  display: none;
+  z-index: 5;
+
 }

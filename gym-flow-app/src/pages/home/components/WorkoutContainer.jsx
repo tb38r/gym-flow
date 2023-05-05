@@ -1,31 +1,11 @@
-import { React, useContext } from 'react';
+import { React } from 'react';
 import PropTypes from 'prop-types';
 //import { Box } from '@mui/material';
 // import Button from '@mui/material/Button';
 //import Typography from '@mui/material/Typography';
 //import Modal from '@mui/material/Modal';
-import { GymFlowContext } from '../../../context/flow-context';
 
 const WorkoutContainer = (props) => {
-  // const [legOpen, setLegOpen] = useState(false);
-  // const handleLegOpen = () => setLegOpen(true);
-  // const handleLegClose = () => setLegOpen(false);
-
-  // const [chestOpen, setChestOpen] = useState(false);
-  // const handleChestOpen = () => setChestOpen(true);
-  // const handleChestClose = () => setChestOpen(false);
-
-  // const [backOpen, setBackOpen] = useState(false);
-  // const handleBackOpen = () => setBackOpen(true);
-  // const handleBackClose = () => setBackOpen(false);
-
-  // const [absOpen, setAbsOpen] = React.useState(false);
-  // const handleAbsOpen = () => setAbsOpen(true);
-  // const handleAbsClose = () => setAbsOpen(false);
-
-  const { handleAbsOpen, handleChestOpen, handleBackOpen, handleLegsOpen } =
-    useContext(GymFlowContext);
-
   const HandleClick = (e) => {
     e.preventDefault();
     let clickedOption = e.target.id;
@@ -33,16 +13,16 @@ const WorkoutContainer = (props) => {
 
     switch (clickedOption) {
       case 'legs':
-        handleLegsOpen();
+        document.getElementById('box-legs').style.display = 'block';
         break;
       case 'chest-triceps':
-        handleChestOpen();
+        document.getElementById('box-chest').style.display = 'block';
         break;
       case 'back-biceps':
-        handleBackOpen();
+        document.getElementById('box-back').style.display = 'block';
         break;
       case 'abs':
-        handleAbsOpen();
+        document.getElementById('box-abs').style.display = 'block';
         break;
     }
   };

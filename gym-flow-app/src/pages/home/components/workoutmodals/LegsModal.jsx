@@ -1,35 +1,16 @@
 import { Box } from '@mui/material';
-import { React, useContext } from 'react';
-import Modal from '@mui/material/Modal';
-import { GymFlowContext } from '../../../../context/flow-context';
+import { React } from 'react';
+
 import '../../../../assets/css/boxes.css';
 import { WorkoutRows } from '../WorkoutRows';
-import { SaveButton } from '../SaveButton';
-
-const style = {
-  position: 'relative',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  width: 320,
-  height: '50%',
-  bgcolor: 'background.paper',
-  border: '2px solid #000',
-  boxShadow: 24,
-  p: 4
-};
+import { globalBoxStyle } from '../../../../assets/css/global-style';
+import { CloseButton } from '../CloseButton';
 
 const LegsModal = () => {
-  const { legsOpen, handleLegsClose } = useContext(GymFlowContext);
-
   return (
     <>
-      <Modal
-        open={legsOpen}
-        onClose={handleLegsClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description">
-        <Box id="modal-box" sx={style}>
+      <Box id="box-legs" sx={globalBoxStyle}>
+        <div id="modal-box">
           <div className="modal-box-title">LEGS</div>
           <div className="reps-sets">
             <div className="reps-box-title">SETS</div>
@@ -41,9 +22,10 @@ const LegsModal = () => {
           <WorkoutRows workoutname="Leg Press" />
           <WorkoutRows workoutname="Leg Curl" />
 
-          <SaveButton id="savelegs" />
-        </Box>
-      </Modal>
+          <CloseButton name="box-legs" />
+        </div>
+      </Box>
+      {/* </Modal> */}
     </>
   );
 };
