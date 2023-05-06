@@ -1,9 +1,5 @@
 import { React } from 'react';
 import PropTypes from 'prop-types';
-//import { Box } from '@mui/material';
-// import Button from '@mui/material/Button';
-//import Typography from '@mui/material/Typography';
-//import Modal from '@mui/material/Modal';
 
 const WorkoutContainer = (props) => {
   const HandleClick = (e) => {

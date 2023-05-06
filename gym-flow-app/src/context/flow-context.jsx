@@ -25,6 +25,9 @@ export function GymFlowProvider({ children }) {
   const [workoutObjRep, setWorkoutObjRep] = useState({});
   const [workoutObjSet, setWorkoutObjSet] = useState({});
 
+  const [showCount, setShowCount] = useState(0);
+  const [resArray, setResArray] = useState([]);
+
   const updateWorkoutObjRep = (keys, rep) => {
     let subStringed = `${keys}`;
 
@@ -35,6 +38,23 @@ export function GymFlowProvider({ children }) {
     let subStringed = `${keys}`;
 
     setWorkoutObjSet({ ...workoutObjSet, [subStringed]: set });
+  };
+
+  const updateShowCount = () => {
+    setShowCount(showCount + 1);
+  };
+
+  const updateResArray = () => {
+    let res = [];
+    for (const key in workoutObjSet) {
+      if (key in workoutObjSet) {
+        res.push(key);
+      }
+    }
+    console.log(res);
+    setResArray(res);
+    console.log(resArray);
+    return resArray;
   };
 
   return (
@@ -55,7 +75,10 @@ export function GymFlowProvider({ children }) {
         workoutObjRep,
         updateWorkoutObjRep,
         workoutObjSet,
-        updateWorkoutObjSet
+        updateWorkoutObjSet,
+        updateShowCount,
+        updateResArray,
+        resArray
       }}>
       {children}
     </GymFlowContext.Provider>
